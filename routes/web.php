@@ -5,9 +5,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    // return view('welcome');
+    return view('index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,8 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/', [QuestionController::class, 'create']);
 
 Route::get('question/create', [QuestionController::class, 'create'])
     ->name('question.create');

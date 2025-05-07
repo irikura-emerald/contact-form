@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function answers()
     {
-        return $this->hasMany(Answer::class, 'answerer_id');
+        return $this->hasMany(Answer::class);
     }
 }

@@ -18,7 +18,7 @@ class AnswerFactory extends Factory
     {
         return [
             'question_id' => \App\Models\Question::factory(),
-            'answerer_id' => \App\Models\User::factory(),
+            'user_id' => \App\Models\User::factory(),
             'message' => fake()->realText(200)
         ];
     }

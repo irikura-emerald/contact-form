@@ -31,7 +31,7 @@ Route::get('answer/create', [AnswerController::class, 'create'])
     ->middleware(['auth', 'verified'])
     ->name('answer.create');
 
-Route::get('answer/show', [AnswerController::class, 'show'])
+Route::post('answer/show', [AnswerController::class, 'show'])
     ->name('answer.show');
 
 require __DIR__ . '/auth.php';

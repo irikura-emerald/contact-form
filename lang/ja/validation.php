@@ -219,12 +219,12 @@ return [
         'lesson' => 'レッスン',
         'line_address_1' => '回線アドレス1',
         'line_address_2' => '回線アドレス2',
-        'message' => 'メッセージ',
+        // 'message' => 'メッセージ',
         'middle_name' => 'ミドルネーム',
         'minute' => '分',
         'mobile' => '携帯',
         'month' => '月',
-        'name' => '名前',
+        // 'name' => '名前',
         'national_code' => '国コード',
         'number' => '番号',
         'password' => 'パスワード',
@@ -259,6 +259,11 @@ return [
         'updated_at' => '更新日',
         'username' => 'ユーザー名',
         'year' => '年',
+
+        'name' => '氏名',
+        'mail_address' => 'メールアドレス',
+        'telephonenumber' => '電話番号',
+        'message' => '本文',
     ],
 
 ];

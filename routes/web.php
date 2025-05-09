@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function () {
 Route::get('question/create', [QuestionController::class, 'create'])
     ->name('question.create');
 
+Route::post('question/create', [QuestionController::class, 'store'])
+    ->name('question.store');
+
 Route::get('question/show', [QuestionController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('question.show');

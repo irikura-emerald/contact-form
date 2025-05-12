@@ -29,7 +29,7 @@ class QuestionController extends Controller
 
         // すでに同じものがあるならそれを取得
         // ないなら新しいQuestionを作成
-        $question = Question::where([
+        $question = Question::with('answer')::where([
             ['name', $validated['name']],
             ['mail_address', $validated['mail_address']],
             ['telephonenumber', $validated['telephonenumber']],
@@ -60,7 +60,8 @@ class QuestionController extends Controller
 
     public function show()
     {
-        $questions = Question::paginate(10);
+        define('PER_PAGE', 10);
+        $questions = Question::paginate(PER_PAGE);
         return view('question.show', compact('questions'));
     }
 }

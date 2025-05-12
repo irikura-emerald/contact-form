@@ -30,7 +30,7 @@ Route::get('question/show', [QuestionController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('question.show');
 
-Route::get('answer/create', [AnswerController::class, 'create'])
+Route::get('answer/create/{question}', [AnswerController::class, 'create'])
     ->middleware(['auth', 'verified'])
     ->name('answer.create');
 

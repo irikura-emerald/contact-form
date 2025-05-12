@@ -20,4 +20,12 @@ class Question extends Model
     {
         return $this->hasOne(Answer::class);
     }
+
+    public function getPartOfMessage(): string
+    {
+        $messageLength = 100;
+        $partOfMessage = mb_substr($this->message, 0, $messageLength);
+        $isShort = strlen($partOfMessage) < strlen($this->message);
+        return $partOfMessage . ($isShort ? '...' : '');
+    }
 }

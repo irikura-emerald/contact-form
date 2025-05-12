@@ -1,10 +1,17 @@
 <x-simple-layout>
     <h1>お問合わせ一覧</h1>
-    @foreach ($questions as $post)
-        {{ $post->id }}
-        {{ $post->name }}
-        {{ $post->message }}
-        {{ $post->created_at }}
-
+    @foreach ($questions as $question)
+        <p>
+            <a href="{{ route('answer.create', $question->id) }}">
+                <ul>
+                    <li>{{ $question->id }}</li>
+                    <li>{{ $question->name }}</li>
+                    <li>{{ $question->getPartOfMessage() }}</li>
+                    <li>{{ $question->created_at }}</li>
+                    <li>{{ $question->answer->created_at ?? '--' }}</li>
+                </ul>
+            </a>
+        </p>
     @endforeach
+    {{ $questions->links() }}
 </x-simple-layout>

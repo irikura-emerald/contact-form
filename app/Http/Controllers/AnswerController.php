@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Question;
 
 class AnswerController extends Controller
 {
-    public function create()
+    public function create(Question $question)
     {
-        return view('answer.create');
+        return view('answer.create', compact('question'));
     }
 
     public function show()

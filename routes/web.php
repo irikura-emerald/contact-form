@@ -34,6 +34,14 @@ Route::get('answer/create/{question}', [AnswerController::class, 'create'])
     ->middleware(['auth', 'verified'])
     ->name('answer.create');
 
+Route::post('answer/create/{question}', [AnswerController::class, 'store'])
+    ->middleware(['auth', 'verified'])
+    ->name('answer.create');
+
+Route::patch('answer/create/{question}', [AnswerController::class, 'update'])
+    ->middleware(['auth', 'verified'])
+    ->name('answer.create');
+
 Route::post('answer/show', [AnswerController::class, 'show'])
     ->name('answer.show');
 

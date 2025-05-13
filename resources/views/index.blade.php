@@ -1,4 +1,4 @@
-<x-simple-layout>
+<x-simple-layout script="/js/index.js">
     <h1>ホーム画面</h1>
 
     <p>
@@ -6,13 +6,16 @@
     </p>
 
     <p>
-    <form method="post" action="{{ route('answer.show') }}">
-        @csrf
-        <div>
-            <label for="question_id">質問ID</label>
-            <input type="number" id="question_id" />
-        </div>
-        <input type="submit" value="回答を見る" />
-    </form>
+    <div>
+        <label for="question_id">質問ID</label>
+        <input type="number" id="question_id" min="1"/>
+        <select id="question_select">
+            <option value="-1">--</option>
+            @foreach ($myQuestionIds as $id)
+                <option value="{{ $id }}">{{ $id }}</option>
+            @endforeach
+        </select>
+    </div>
+    <input id="show_button" type="button" value="回答を見る" />
     </p>
 </x-simple-layout>

@@ -61,8 +61,8 @@ class AnswerController extends Controller
         return view('answer.create', compact('question'));
     }
 
-    public function show()
+    public function show(Question $question)
     {
-        return view('answer.show');
+        return view('answer.show', compact('question'));
     }
 }

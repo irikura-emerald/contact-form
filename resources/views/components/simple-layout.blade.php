@@ -1,3 +1,4 @@
+@props(['script'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -13,6 +14,10 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @isset ($script)
+        <script src="{{ asset($script) }}"></script>
+    @endisset
 </head>
 
 <body>

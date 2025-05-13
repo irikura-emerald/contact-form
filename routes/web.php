@@ -3,12 +3,14 @@
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // トップ
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
     // return view('welcome');
-    return view('index');
+    $myQuestionIds = explode(',', $request->cookie()['myQuestionIds']);
+    return view('index', compact('myQuestionIds'));
 });
 
 Route::get('/dashboard', function () {
@@ -47,7 +49,7 @@ Route::patch('answer/create/{question}', [AnswerController::class, 'update'])
     ->name('answer.create');
 
 // 回答閲覧
-Route::post('answer/show', [AnswerController::class, 'show'])
+Route::get('answer/show/{question}', [AnswerController::class, 'show'])
     ->name('answer.show');
 
 require __DIR__ . '/auth.php';

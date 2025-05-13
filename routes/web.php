@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
+// トップ
 Route::get('/', function () {
     // return view('welcome');
     return view('index');
@@ -20,16 +21,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// お問い合わせ
 Route::get('question/create', [QuestionController::class, 'create'])
     ->name('question.create');
 
 Route::post('question/create', [QuestionController::class, 'store'])
     ->name('question.store');
 
+// お問い合わせ一覧
 Route::get('question/show', [QuestionController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('question.show');
 
+// 回答編集
 Route::get('answer/create/{question}', [AnswerController::class, 'create'])
     ->middleware(['auth', 'verified'])
     ->name('answer.create');
@@ -42,6 +46,7 @@ Route::patch('answer/create/{question}', [AnswerController::class, 'update'])
     ->middleware(['auth', 'verified'])
     ->name('answer.create');
 
+// 回答閲覧
 Route::post('answer/show', [AnswerController::class, 'show'])
     ->name('answer.show');
 

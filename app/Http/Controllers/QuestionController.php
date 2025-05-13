@@ -29,7 +29,7 @@ class QuestionController extends Controller
 
         // すでに同じものがあるならそれを取得
         // ないなら新しいQuestionを作成
-        $question = Question::with('answer')::where([
+        $question = Question::with('answer')->where([
             ['name', $validated['name']],
             ['mail_address', $validated['mail_address']],
             ['telephonenumber', $validated['telephonenumber']],

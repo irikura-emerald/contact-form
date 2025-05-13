@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Route;
 // トップ
 Route::get('/', function (Request $request) {
     // return view('welcome');
-    $myQuestionIds = explode(',', $request->cookie()['myQuestionIds']);
+    $myQuestionIds = $request->hasCookie('myQuestionIds')
+        ? explode(',', $request->cookie('myQuestionIds')) : [];
     return view('index', compact('myQuestionIds'));
 });
 

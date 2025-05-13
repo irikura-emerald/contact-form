@@ -2,7 +2,7 @@
     <h1>お問合わせ一覧</h1>
     @foreach ($questions as $question)
         <p>
-            <a href="{{ route('answer.create', $question->id) }}">
+            <a href="{{ route('answer.create', $question) }}">
                 <ul>
                     <li>{{ $question->id }}</li>
                     <li>{{ $question->name }}</li>

@@ -22,7 +22,7 @@
         <ul>
             <li>
                 <x-input-error :messages="$errors->get('message')"></x-input-error>
-                <textarea id="message" name="message">{{ $question->answer->message ?? '' }}</textarea>
+                <textarea id="message" name="message">{{ old('message', $question->answer->message ?? '') }}</textarea>
             </li>
             <li> {{ $question->answer->created_at ?? '--' }} </li>
         </ul>

@@ -26,8 +26,6 @@
             </li>
             <li> {{ $question->answer->created_at ?? '--' }} </li>
         </ul>
-        <!-- <input type="hidden" id="question_id" name="question_id" value="{{ $question->id }}" />
-        <input type="hidden" id="user_id" name="user_id" value="{{ Auth::id() }}" /> -->
         @if (session('resultMessage'))
             <div class="text-red-600 font-bold">
                 {{ session('resultMessage') }}

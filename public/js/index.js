@@ -22,4 +22,9 @@ window.onload = function () {
         questionId.value = id != -1 ? id : "";
         questionId.disabled = id != -1;
     };
+
+    // ブラウザの戻るボタンで戻った時など、
+    // Webブラウザがテキストボックスやセレクトボックスに以前まで入っていた質問IDを自動で入力した場合、
+    // テキストボックスを無効にする
+    setTimeout(() => questionId.disabled = select.value != -1, 1);
 };

@@ -6,7 +6,7 @@
     <div class="bg-white my-3 p-3 mx-auto max-w-7xl rounded-2xl">
         <form method="post" action="{{route('question.store')}}">
             @csrf
-            <div class="flex flex-wrap mb-3">
+            <div class="flex flex-wrap mb-3 items-center">
                 <div class="w-[10rem]">
                     <label for="name" class="font-semibold"> 氏名(任意) </label>
                 </div>
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap mb-3">
+            <div class="flex flex-wrap mb-3 items-center">
                 <div class="w-[10rem]">
                     <label for="mail_address" class="font-semibold"> メールアドレス(任意) </label>
                 </div>
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap mb-3">
+            <div class="flex flex-wrap mb-3 items-center">
                 <div class="w-[10rem]">
                     <label for="telephonenumber" class="font-semibold"> 電話番号(任意) </label>
                 </div>

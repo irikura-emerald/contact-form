@@ -5,7 +5,7 @@
 
     <div class="bg-white my-3 p-3 mx-auto max-w-7xl rounded-2xl">
         <div>{{ $question->id }}</div>
-        <div>{{ $question->message }}</div>
+        <div class="whitespace-pre">{{ $question->message }}</div>
         <hr>
         <div class="flex flex-wrap">
             <div class="mr-3">{{ $question->created_at }}</div>

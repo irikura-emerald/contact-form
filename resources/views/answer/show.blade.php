@@ -25,7 +25,7 @@
             <div>{{ $question->created_at }}</div>
         </div>
 
-        <div>{{ $question->message }}</div>
+        <div class="whitespace-pre">{{ $question->message }}</div>
     </div>
 
     <div class="bg-white my-3 p-3 mx-auto max-w-7xl rounded-2xl">
@@ -40,7 +40,7 @@
             <div>{{ $question->answer->created_at ?? '--' }}</div>
         </div>
 
-        <div>{{ $question->answer->message ?? '' }}</div>
+        <div class="whitespace-pre">{{ $question->answer->message ?? '' }}</div>
 
     </div>
 
